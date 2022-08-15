@@ -7,25 +7,25 @@ import TaskItem from "./TaskItem";
 function TaskManager (){
     const [tasks, setTasks] = useState ([]);
     const [input, setInput] = useState ("");
-    
-    const handleSubmit = e =>{
+
+    const handleSubmit = (e) =>{
     
         e.preventDefault();
 
-        if (input ==="") return;
+        if(input ==="") return;
 
         setTasks([input, ...tasks]);
         setInput("");
 
         
-        }
+        
 
     }
     const handleDelete = index => {
-        const newTasks = tasks.filter((task) => task !== index);
+        const newTasks = tasks.filter((tasks) => tasks !== index);
         setTasks(newTasks);
-   
-    return(
+    }
+     return(
 
         <div className="bg-blue-400 h-screen flex justify-center items-center">
           
@@ -55,6 +55,7 @@ function TaskManager (){
         
         </div>
     );
+
 }
 
 export default TaskManager;
