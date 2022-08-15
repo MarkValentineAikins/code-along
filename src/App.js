@@ -1,12 +1,13 @@
 /* import logo from './logo.svg';
 import './App.css'; */
 
-import Header from './Components/Header';
-import Button from "./Components/Button";
-import {Image} from "./Components/image";
-import Nav from "./Components/Nav";
-import Navbar from './Components/Navbar';
-import NavItem from './Components/NavItem';
+//import Header from './Components/Header';
+//import Button from "./Components/Button";
+//import {Image} from "./Components/image";
+// import Nav from "./Components/Nav";
+//import Navbar from './Components/Navbar';
+//import Practice from './Components/Practice';
+import TaskManager from './Components/TaskManager';
 
 //This function bring together all components together for rendering on the page
 //Every imported component here has been exported from it component function
@@ -14,16 +15,15 @@ import NavItem from './Components/NavItem';
 function App() {
   return (
     <div>
-      <Navbar/> 
-       <NavItem/>
-
-      <Button label="Add Cart" />
-      <Button label="Login" />
-      <Button label="Register" />
-      <Button label="Sign Out" />
-      <Nav/>
+     {/* <Navbar/>
+      <Button label="Add Cart"/> 
+      <Button label="Login"/>
+      <Button label="Register"/>
+      <Button label="Sign Out"/>
       <Header/>
       <Image/>
+      <Practice/> */}
+      <TaskManager/>
     </div>
   );
 }
