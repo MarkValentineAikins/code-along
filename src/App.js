@@ -7,7 +7,8 @@ import './App.css'; */
 // import Nav from "./Components/Nav";
 //import Navbar from './Components/Navbar';
 //import Practice from './Components/Practice';
-import TaskManager from './Components/TaskManager';
+import Form from './Components/Form';
+//import TaskManager from './Components/TaskManager';
 
 //This function bring together all components together for rendering on the page
 //Every imported component here has been exported from it component function
@@ -23,7 +24,8 @@ function App() {
       <Header/>
       <Image/>
       <Practice/> */}
-      <TaskManager/>
+      {/* <TaskManager/> */}
+      <Form/>
     </div>
   );
 }

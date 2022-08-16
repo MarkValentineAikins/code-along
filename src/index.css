@@ -2,4 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components{
+
+    .form-label{
+        @apply block text-lg text-gray-500;
+    }
+
+    .input-style{
+
+        @apply border w-full outline-none py-1 px-2 text-lg text-gray-800 rounded-lg;
+    }
+}
+
 
