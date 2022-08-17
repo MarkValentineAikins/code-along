@@ -28,12 +28,12 @@ function Form(){
 console.log(data);
     return(
     
-        <div className="flex justify-center items-center h-screen bg-gray-200 p-4 ">
-            <div className="max-w-2xl w-full bg-white border-4 p-10 rounded-2xl "> 
-            <div className="max-w-2xl w-full bg-blue-400 border-1 p-2 rounded-3xl text-white text-center mb-5 text-3xl font-extrabold font-sans">
+        <div className="flex justify-center items-center h-screen bg-white p-4 ">
+            <div className="max-w-2xl w-full bg-gray-100 border-1 p-10 rounded-3xl shadow-xl "> 
+            <div className="max-w-2xl w-full bg-red-400 border-1 p-2 rounded-xl text-white text-center mb-5 text-3xl font-extrabold font-sans shadow-lg">
 
                 <h1 >
-                Registration
+               CYC Sign Up Form
                 </h1>
                 </div>
     <form>
@@ -43,7 +43,8 @@ console.log(data);
     <input type ="text" 
     name="firstName" 
     id = "firstName" 
-    placeholder="Enter your First Name" className="input-style" 
+    placeholder="Mark" 
+    className="input-style" 
     value={data.firstName}
     onChange = {handleChange}
     />
@@ -56,7 +57,7 @@ console.log(data);
     <input type="text" 
     name = "middleName" 
     id="middleName" 
-    placeholder="Enter your middle name or other name" 
+    placeholder="Valentine" 
     className="input-style" 
     value={data.middleName}
     onChange = {handleChange}
@@ -69,7 +70,7 @@ console.log(data);
     <input type="text" 
     name = "lastName" 
     id="lastName" 
-    placeholder="Enter your last" 
+    placeholder="Aikins" 
     className="input-style"
     value={data.lastName}
     onChange = {handleChange}
@@ -143,7 +144,12 @@ console.log(data);
                 </div>
     
                 <div>
-                <button type="submit " className="rounded-md bg-red-100 px-4 py-2 text-center text-gray-500 mt-2 ">Sign Up</button>
+                <button 
+                type="submit " 
+                className=" text-xl font-extrabold font-sans max-w-2xl w-full bg-green-400 border-1 rounded-3xl px-4 py-2 
+                text-center text-white mt-4 z-50 shadow-lg">Sign Up</button>
+
+
                 </div>
                 
             </form>

@@ -5,12 +5,18 @@
 @layer components{
 
     .form-label{
-        @apply block text-lg text-gray-500;
+        @apply block text-lg text-blue-400 z-50 font-extrabold font-serif;
+
+
     }
 
     .input-style{
 
-        @apply border w-full outline-none py-1 px-2 text-lg text-gray-800 rounded-lg;
+        @apply border w-full outline-none py-1 px-2 
+        text-lg text-gray-800 rounded-lg md:z-50 shadow-lg
+        focus:shadow hover:border-gray-400;
+
+
     }
 }
 
