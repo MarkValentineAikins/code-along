@@ -11,6 +11,7 @@ import './App.css'; */
 //import PasswordReset from './Components/PasswordReset';
 //import TaskManager from './Components/TaskManager';
 import ProductList from "./Components/ProductList";
+//import Spinner from "./Components/Spinner";
 //This function bring together all components together for rendering on the page
 //Every imported component here has been exported from it component function
 
@@ -27,6 +28,8 @@ function App() {
       <Practice/> */}
       {/* <TaskManager/> */}
       <ProductList/>
+      {/* <Spinner/> */}
+
 
 
       {/* <Form/> */}
