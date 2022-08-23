@@ -1,41 +1,26 @@
-/* import logo from './logo.svg';
-import './App.css'; */
 
-//import Header from './Components/Header';
-//import Button from "./Components/Button";
-//import {Image} from "./Components/image";
-// import Nav from "./Components/Nav";
-//import Navbar from './Components/Navbar';
-//import Practice from './Components/Practice';
-//import Form from './Components/Form';
-//import PasswordReset from './Components/PasswordReset';
-//import TaskManager from './Components/TaskManager';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./Components/Navbar";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
 import ProductList from "./Components/ProductList";
-//import Spinner from "./Components/Spinner";
-//This function bring together all components together for rendering on the page
-//Every imported component here has been exported from it component function
+import TaskManager from "./Components/TaskManager";
+
 
 function App() {
   return (
-    <div>
-     {/* <Navbar/>
-      <Button label="Add Cart"/> 
-      <Button label="Login"/>
-      <Button label="Register"/>
-      <Button label="Sign Out"/>
-      <Header/>
-      <Image/>
-      <Practice/> */}
-      {/* <TaskManager/> */}
-      <ProductList/>
-      {/* <Spinner/> */}
-
-
-
-      {/* <Form/> */}
-
-      {/* <PasswordReset/> */}
-    </div>
+    <BrowserRouter>
+    <Navbar/>
+    <Routes>
+      <Route path ="/" element ={<Home/>}/>
+      <Route path = "/About" element={<About/>}/>
+      <Route path = "/product-list" element={<ProductList/>}/>
+      <Route path = "/Task-Manager" element={<TaskManager/>}/>
+      <Route path = "/Contact" element={<Contact/>}/>
+    </Routes>
+    
+    </BrowserRouter>
 
   );
 }

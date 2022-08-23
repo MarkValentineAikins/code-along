@@ -4,7 +4,8 @@ import {useState, useEffect} from "react"
 
 
 
-async function useAxios(url) {
+ function useAxios(url) {
+
 const [data, setData] = useState([]);
 const [isloading, setIsLoading] = useState(false);
 const [error, setError] = useState(null);
