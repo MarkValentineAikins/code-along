@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 
 import {v4 as uuid } from "uuid";
 
-import TaskItem from "./TaskItem";
+import TaskItem from "../Components/TaskItem";
+
 //import bg from "../assets/images/bg.png";
 
 

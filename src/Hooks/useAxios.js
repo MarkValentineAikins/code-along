@@ -6,7 +6,8 @@ import {useState, useEffect} from "react"
 
  function useAxios(url) {
 
-const [data, setData] = useState([]);
+const [data, setData] = useState(null);
+
 const [isloading, setIsLoading] = useState(false);
 const [error, setError] = useState(null);
 

@@ -1,9 +1,9 @@
 
-import Product from './Product';
+import Product from '../Components/Product';
 //import React, {useState} from "react";
 //import axios from "axios";
 import useAxios from '../Hooks/useAxios';
-import Spinner from './Spinner';
+import Spinner from '../Components/Spinner';
 
 
 
