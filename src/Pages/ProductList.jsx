@@ -1,29 +1,55 @@
+import React, { useEffect, useState } from "react";
+import Product from "../Components/Product";
 
-import Product from '../Components/Product';
-//import React, {useState} from "react";
-//import axios from "axios";
-import useAxios from '../Hooks/useAxios';
-import Spinner from '../Components/Spinner';
-
-
+import useAxios from "../Hooks/useAxios";
+import Spinner from "../Components/Spinner";
+import { useProductContext } from "../context/productContext";
 
 function ProductList() {
-// const [products, setProducts] = useState ([]);
-const {data, isloading, error} = useAxios("https://api.escuelajs.co/api/v1/products");
+  // const { data, isLoading, error } = useAxios(
+  //   "https://api.escuelajs.co/api/v1/products"
+  // );
+  const { data, isLoading, error } = useAxios(
+    "https://fakestoreapi.com/products"
+  );
+  const { products, setProducts } = useProductContext();
+
+  // useEffect(() => {
+  //     const getProducts = async ()  => {
+  //         const davids = await axios.get(
+  //             "https://api.escuelajs.co/api/v1/products"
+  //         );
+  //         // the console log is use to check whether what you did is correct in the browser
+  //         // console.log(davids)
+  //         setProducts(davids.data);
+  //     };
+  //     getProducts();
+
+  // }, []);
+  // console.log(data);
+
+  useEffect(() => {
+    setProducts(data);
+  }, [data]);
+
+  if (isLoading) {
+    return <Spinner />;
+  }
+  if (error) {
+    return <p>{error}</p>;
+  }
+
   
-  if (isloading) return <Spinner/>;
-  if (error) return<p>{error}</p>;
 
   return (
-    <div className="flex justify-center flex-wrap gap-4 items-centers mt-6">
-      {
-        data.map((data)=>
-        ( 
-        <Product item = {data}/>
-        ))}
-      
+    <div className=" flex flex-wrap gap-2 pt-10 mt-5 justify-center items-center">
+      {/* {data.map((data) => ( NB:change data in the mapping to products */}
+      {products?.map((data) => (
+
+        <Product item={data} />
+      ))}
     </div>
   );
-};
+}
 
 export default ProductList;
