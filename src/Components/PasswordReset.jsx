@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import logo from "../assets/image/logo.png";
 function PasswordReset(){
     const [data, setData] = useState({
 
@@ -27,9 +28,24 @@ function PasswordReset(){
     ;
 console.log(data);
     return(
+    <div className="flex flex-col md:flex-row">
+        <div className="max-w-3xl w-full space-x-3 snap-center space-y-1 flex justify-center items-center shadow-sm bg-gradient-to-t from-blue-400 to-gray-200 p-4">
+        
+        <img src ={logo} alt = "logo" className="px-3 py-3 rounded-3xl object-fill h-20 w-20"/>
+
+<ul className="max-w-3xl w-full flex gap-4  px-2 py-2 m-2 text-blue">
     
+
+<li className="rounded-md bg-red-300 px-4 py-2"><a href="#">Home</a></li>
+<li className="rounded-md bg-green-200 px-4 py-2"><a href ="#">About</a></li>
+<li className="rounded-md bg-blue-200 px-4 py-2"><a href ="#">Service</a></li>
+<li className="rounded-md bg-gray-300 px-4 py-2"><a href ="#">Contact</a></li>
+</ul>
+</div>
         <div className="flex justify-center items-center h-screen bg-gradient-to-r from-cyan-500 to-blue-500 p-4 ">
-            <div className="max-w-2xl w-full bg-gray-100 border-1 p-10 rounded-3xl shadow-xl "> 
+            
+            
+            <div className="max-w-2xl w-full bg-gray-100 border-1 p-10 rounded-xl shadow-xl "> 
             <div className="max-w-2xl w-full bg-red-400 border-1 p-2 rounded-xl text-white text-center mb-5 text-3xl font-extrabold font-sans shadow-lg">
 
 
@@ -113,7 +129,7 @@ console.log(data);
     
     
         </div>
-       
+        </div>
             
     
     );

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Product from "../Components/Product";
 
 import useAxios from "../Hooks/useAxios";
@@ -30,10 +30,10 @@ function ProductList() {
 
   useEffect(() => {
     setProducts(data);
-  }, [data]);
+  }, [data, setProducts]);
 
   if (isLoading) {
-    return <Spinner />;
+    return <Spinner/>;
   }
   if (error) {
     return <p>{error}</p>;
