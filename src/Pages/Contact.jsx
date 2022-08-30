@@ -12,9 +12,10 @@ function Contact() {
 
 
       <div className='box'>left</div>
-      <div className='box'>right</div>
-      <div className='box'>top</div>
-      <div className='box'>down</div>
+      <div className='box1'>right</div>
+
+      <div className='box3'>top</div>
+      <div className='box2'>down</div>
 
     </div>
   )

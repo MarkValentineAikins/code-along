@@ -39,10 +39,10 @@ return JSON.parse(saveTasks);
         localStorage.setItem("tasks", JSON.stringify(tasks));
     }, [tasks]);   
     
-    const handleDelete = id => {
+    const handleDelete = (id) => {
         const newTasks = tasks.filter((tasks) => tasks.id !== id);
         setValue(newTasks);
-    }
+    };
      return(
 
         <div className="bg-blue-400 h-screen max-w-2xl w-full flex justify-center items-center">
