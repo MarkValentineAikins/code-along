@@ -34,15 +34,44 @@ return JSON.parse(saveTasks);
         setValue([newTask, ...tasks]);
         setInput("");
 
-    }
+        const handleDelete = (id) => {
+            const newTasks = tasks.filter((tasks) => tasks.id !== id);
+            setValue(newTasks);
+        };
+
+        const handleCompleted = (id) =>{
+            const newTasks = tasks.map((task) =>{
+                if (tasks.id === id) { 
+                    return {...tasks, 
+                    completed: !tasks.completed,
+                };
+                }
+                return task;
+            });
+        
+            };
+
+            setValue(newTask);
+            
+        };
+
+    const handleEdit = (id) =>{
+        const newTasks = tasks.filter((task) =>{ if (task.id === id){
+            setInput(task.text);
+        } else {
+            return false;
+        }
+        return task;
+    });
+    setValue (newTasks)
+    } 
+
     useEffect(()=>{
         localStorage.setItem("tasks", JSON.stringify(tasks));
     }, [tasks]);   
     
-    const handleDelete = (id) => {
-        const newTasks = tasks.filter((tasks) => tasks.id !== id);
-        setValue(newTasks);
-    };
+    
+
      return(
 
         <div className="bg-blue-400 h-screen max-w-2xl w-full flex justify-center items-center">
@@ -50,7 +79,8 @@ return JSON.parse(saveTasks);
             {/* <img src={bg} alt="background" className=" absolute w-full h-full object-cover mix-blend-screen "/> */}
 
             <div className="max-w-xl rounded-xl bg-white py-10 px-5 max-h-96 overflow-hidden shadow-lg" >
-            <div className="flex justify-center mb-10 bg-blue-700 rounded-2xl py-3 shadow-md" ><h1 className="text-white text-center text-lg font-extrabold ">To-Do-List</h1></div>
+            <div className="flex justify-center mb-10 bg-blue-700 rounded-2xl py-3 shadow-md" >
+                <h1 className="text-white text-center text-lg font-extrabold ">To-Do-List</h1></div>
                 <form className="flex space-x-2 w-[30rem] shadow-md" onSubmit={handleSubmit}>
 
                
@@ -61,7 +91,13 @@ return JSON.parse(saveTasks);
                 </form>
                 <div className="space-y-2 overflow-y-auto h-56">
                  {
-                    tasks.map((task) =>(<TaskItem key={task.id} task = {task} handleDelete = {handleDelete} />))
+                    tasks.map((task) =>(<TaskItem 
+                        key={task.id} 
+                        task = {task} 
+                        handleDelete = {handleDelete} 
+                        handleCompleted = {handleCompleted}
+                        handleEdit = {handleEdit}
+                        />))
 
                  }
                         
@@ -73,9 +109,8 @@ return JSON.parse(saveTasks);
                 
         
         </div>
-    );
-
-}
-
+    );  
+       
+   }
 export default TaskManager;
 
